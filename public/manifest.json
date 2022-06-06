@@ -1,0 +1,45 @@
+{
+  "name": "Wipster",
+  "short_name": "Wipster",
+  "description": "The way the world reviews and approves.",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "/",
+  "categories": [
+    "business",
+    "collaborate",
+    "review",
+    "approve",
+    "share",
+    "media",
+    "video",
+    "audio",
+    "image",
+    "pdf"
+  ],
+  "theme_color": "#121212",
+  "background_color": "#121212",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo_192_transparent.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo_512_transparent.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "logo_512_white.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ]
+}
