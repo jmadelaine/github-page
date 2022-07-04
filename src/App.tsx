@@ -3,7 +3,7 @@ import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import SomethingWentWrongPage from 'information_page/SomethingWentWrongPage'
 
-const TsGuardianPage = lazy(async () => import('ts_guardian_page/TsGuardianPage'))
+const TsGuardianPage = lazy(async () => import('ts_guardian_page/Page'))
 
 const App = () => (
   <BrowserRouter>

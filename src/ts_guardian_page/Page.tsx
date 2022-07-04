@@ -2,7 +2,6 @@
 import { Col, Page } from 'components/layout'
 import { useEffect } from 'react'
 import { Docs } from './Docs'
-import { Header } from './Header'
 import { LiveExample } from './LiveExample'
 import { TopBlurb } from './TopBlurb'
 
@@ -11,7 +10,7 @@ export default () => {
     loadTSGuardian()
   }, [])
   return (
-    <Page header={<Header />}>
+    <Page>
       <TopBlurb />
       <Col gap="3rem">
         <LiveExample />

@@ -53,7 +53,7 @@ const createRandomLines = (texts: string[], count: number) =>
   Array(count)
     .fill(undefined)
     .map(() =>
-      Array(20)
+      Array(16)
         .fill(undefined)
         .map(() => texts[Math.floor(Math.random() * (texts.length - 1))])
     )
@@ -64,7 +64,7 @@ export const GuardBackgroundText = () => {
 
   const backgroundColor = theme.colors.background(isDarkMode ? 0 : 2)
 
-  const lines = useMemo(() => createRandomLines(guardText, 20), [])
+  const lines = useMemo(() => createRandomLines(guardText, 8), [])
 
   const textColors = useMemo(() => {
     const colors = [theme.colors.primary(), theme.colors.text(0.375), theme.colors.text(0.75)]
@@ -77,10 +77,11 @@ export const GuardBackgroundText = () => {
         css={{
           fontFamily: '"Share Tech Mono", monospace',
           opacity: isDarkMode ? (isDesktop ? 0.3 : 0.15) : isDesktop ? 0.4 : 0.3,
+          top: '-0.25rem',
         }}
       >
         {lines.map((line, i) => (
-          <Text key={i} size="lg" css={{ whiteSpace: 'nowrap' }}>
+          <Text key={i} css={{ whiteSpace: 'nowrap' }}>
             {line.map((t, ii) => (
               <span key={ii} css={{ color: textColors[i][ii] }}>
                 {t}
