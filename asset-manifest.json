@@ -1,6 +1,6 @@
 {
   "index.html": {
-    "file": "assets/index-684e1beb.js",
+    "file": "assets/index-966e8661.js",
     "src": "index.html",
     "isEntry": true,
     "dynamicImports": [
@@ -8,7 +8,7 @@
     ]
   },
   "src/ts_guardian_page/Page.tsx": {
-    "file": "assets/Page.9cd35c5b.js",
+    "file": "assets/Page.daa3d5bb.js",
     "src": "src/ts_guardian_page/Page.tsx",
     "isDynamicEntry": true,
     "imports": [

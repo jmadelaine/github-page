@@ -1,15 +1,15 @@
-import{r as z,j as $,a as v,S as Se,C as _,R as M,I as Oe,w as Te,g as Ee,b as N,_ as je,c as le,d as X,e as Pe,f as fe,u as Z,h as $e,i as ve,T as G,F as Be,k as me,B as L,l as D,m as ae,A as re,n as Ce,o as Ue}from"./index-684e1beb.js";const Ne=({children:e,header:n,footer:s,...l})=>{const h=z.exports.useRef(null);return $(_,{...l,children:[!!n&&v(Se.Top,{css:{zIndex:3},children:n}),v(_,{ref:h,flex:1,css:{...!n&&{paddingTop:"env(safe-area-inset-top)"},...!s&&{paddingBottom:"env(safe-area-inset-bottom)"},minBlockSize:0,zIndex:1},children:e}),!!s&&v(M,{css:{paddingBottom:"env(safe-area-inset-bottom)",zIndex:2},children:s})]})};function ze(e,n){if(e==null)return{};var s={},l=Object.keys(e),h,u;for(u=0;u<l.length;u++)h=l[u],!(n.indexOf(h)>=0)&&(s[h]=e[h]);return s}function xe(e,n){if(e==null)return{};var s=ze(e,n),l,h;if(Object.getOwnPropertySymbols){var u=Object.getOwnPropertySymbols(e);for(h=0;h<u.length;h++)l=u[h],!(n.indexOf(l)>=0)&&(!Object.prototype.propertyIsEnumerable.call(e,l)||(s[l]=e[l]))}return s}var _e={area:!0,base:!0,br:!0,col:!0,embed:!0,hr:!0,img:!0,input:!0,link:!0,meta:!0,param:!0,source:!0,track:!0,wbr:!0},Ie=/\s([^'"/\s><]+?)[\s/>]|([^\s=]+)=\s?(".*?"|'.*?')/g;function he(e){var n={type:"tag",name:"",voidElement:!1,attrs:{},children:[]},s=e.match(/<\/?([^\s]+?)[/\s>]/);if(s&&(n.name=s[1],(_e[s[1]]||e.charAt(e.length-2)==="/")&&(n.voidElement=!0),n.name.startsWith("!--"))){var l=e.indexOf("-->");return{type:"comment",comment:l!==-1?e.slice(4,l):""}}for(var h=new RegExp(Ie),u=null;(u=h.exec(e))!==null;)if(u[0].trim())if(u[1]){var p=u[1].trim(),o=[p,""];p.indexOf("=")>-1&&(o=p.split("=")),n.attrs[o[0]]=o[1],h.lastIndex--}else u[2]&&(n.attrs[u[2]]=u[3].trim().substring(1,u[3].length-1));return n}var Re=/<[a-zA-Z0-9\-\!\/](?:"[^"]*"|'[^']*'|[^'">])*>/g,Le=/^\s*$/,De=Object.create(null);function we(e,n){switch(n.type){case"text":return e+n.content;case"tag":return e+="<"+n.name+(n.attrs?function(s){var l=[];for(var h in s)l.push(h+'="'+s[h]+'"');return l.length?" "+l.join(" "):""}(n.attrs):"")+(n.voidElement?"/>":">"),n.voidElement?e:e+n.children.reduce(we,"")+"</"+n.name+">";case"comment":return e+"<!--"+n.comment+"-->"}}var qe={parse:function(e,n){n||(n={}),n.components||(n.components=De);var s,l=[],h=[],u=-1,p=!1;if(e.indexOf("<")!==0){var o=e.indexOf("<");l.push({type:"text",content:o===-1?e:e.substring(0,o)})}return e.replace(Re,function(c,g){if(p){if(c!=="</"+s.name+">")return;p=!1}var y,f=c.charAt(1)!=="/",w=c.startsWith("<!--"),A=g+c.length,T=e.charAt(A);if(w){var P=he(c);return u<0?(l.push(P),l):((y=h[u]).children.push(P),l)}if(f&&(u++,(s=he(c)).type==="tag"&&n.components[s.name]&&(s.type="component",p=!0),s.voidElement||p||!T||T==="<"||s.children.push({type:"text",content:e.slice(A,e.indexOf("<",A))}),u===0&&l.push(s),(y=h[u-1])&&y.children.push(s),h[u]=s),(!f||s.voidElement)&&(u>-1&&(s.voidElement||s.name===c.slice(2,-1))&&(u--,s=u===-1?l:h[u]),!p&&T!=="<"&&T)){y=u===-1?l:h[u].children;var S=e.indexOf("<",A),E=e.slice(A,S===-1?void 0:S);Le.test(E)&&(E=" "),(S>-1&&u+y.length>=0||E!==" ")&&y.push({type:"text",content:E})}}),l},stringify:function(e){return e.reduce(function(n,s){return n+we("",s)},"")}},He="".replace,We=/&(?:amp|#38|lt|#60|gt|#62|apos|#39|quot|#34);/g,Me={"&amp;":"&","&#38;":"&","&lt;":"<","&#60;":"<","&gt;":">","&#62;":">","&apos;":"'","&#39;":"'","&quot;":'"',"&#34;":'"'};function Ge(e){return He.call(e,We,Ze)}function Ze(e){return Me[e]}var Ye=["format"],Ke=["children","count","parent","i18nKey","context","tOptions","values","defaults","components","ns","i18n","t","shouldUnescape"];function ye(e,n){var s=Object.keys(e);if(Object.getOwnPropertySymbols){var l=Object.getOwnPropertySymbols(e);n&&(l=l.filter(function(h){return Object.getOwnPropertyDescriptor(e,h).enumerable})),s.push.apply(s,l)}return s}function O(e){for(var n=1;n<arguments.length;n++){var s=arguments[n]!=null?arguments[n]:{};n%2?ye(Object(s),!0).forEach(function(l){je(e,l,s[l])}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(s)):ye(Object(s)).forEach(function(l){Object.defineProperty(e,l,Object.getOwnPropertyDescriptor(s,l))})}return e}function de(e,n){if(!e)return!1;var s=e.props?e.props.children:e.children;return n?s.length>0:!!s}function ue(e){return e?e&&e.children?e.children:e.props&&e.props.children:[]}function Xe(e){return Object.prototype.toString.call(e)!=="[object Array]"?!1:e.every(function(n){return N.isValidElement(n)})}function V(e){return Array.isArray(e)?e:[e]}function Ve(e,n){var s=O({},n);return s.props=Object.assign(e.props,n.props),s}function ke(e,n){if(!e)return"";var s="",l=V(e),h=n.transSupportBasicHtmlNodes&&n.transKeepBasicHtmlNodesFor?n.transKeepBasicHtmlNodesFor:[];return l.forEach(function(u,p){if(typeof u=="string")s+="".concat(u);else if(N.isValidElement(u)){var o=Object.keys(u.props).length,c=h.indexOf(u.type)>-1,g=u.props.children;if(!g&&c&&o===0)s+="<".concat(u.type,"/>");else if(!g&&(!c||o!==0))s+="<".concat(p,"></").concat(p,">");else if(u.props.i18nIsDynamicList)s+="<".concat(p,"></").concat(p,">");else if(c&&o===1&&typeof g=="string")s+="<".concat(u.type,">").concat(g,"</").concat(u.type,">");else{var y=ke(g,n);s+="<".concat(p,">").concat(y,"</").concat(p,">")}}else if(u===null)le("Trans: the passed in value is invalid - seems you passed in a null child.");else if(X(u)==="object"){var f=u.format,w=xe(u,Ye),A=Object.keys(w);if(A.length===1){var T=f?"".concat(A[0],", ").concat(f):A[0];s+="{{".concat(T,"}}")}else le("react-i18next: the passed in object contained more than one variable - the object should look like {{ value, format }} where format is optional.",u)}else le("Trans: the passed in value is invalid - seems you passed in a variable like {number} - please pass in variables for interpolation as full objects like {{number}}.",u)}),s}function Je(e,n,s,l,h,u){if(n==="")return[];var p=l.transKeepBasicHtmlNodesFor||[],o=n&&new RegExp(p.join("|")).test(n);if(!e&&!o)return[n];var c={};function g(S){var E=V(S);E.forEach(function(a){typeof a!="string"&&(de(a)?g(ue(a)):X(a)==="object"&&!N.isValidElement(a)&&Object.assign(c,a))})}g(e);var y=qe.parse("<0>".concat(n,"</0>")),f=O(O({},c),h);function w(S,E,a){var t=ue(S),d=T(t,E.children,a);return Xe(t)&&d.length===0?t:d}function A(S,E,a,t,d){S.dummy&&(S.children=E),a.push(N.cloneElement(S,O(O({},S.props),{},{key:t}),d?void 0:E))}function T(S,E,a){var t=V(S),d=V(E);return d.reduce(function(i,r,m){var k=r.children&&r.children[0]&&r.children[0].content&&s.services.interpolator.interpolate(r.children[0].content,f,s.language);if(r.type==="tag"){var b=t[parseInt(r.name,10)];!b&&a.length===1&&a[0][r.name]&&(b=a[0][r.name]),b||(b={});var x=Object.keys(r.attrs).length!==0?Ve({props:r.attrs},b):b,F=N.isValidElement(x),C=F&&de(r,!0)&&!r.voidElement,q=o&&X(x)==="object"&&x.dummy&&!F,H=X(e)==="object"&&e!==null&&Object.hasOwnProperty.call(e,r.name);if(typeof x=="string"){var Y=s.services.interpolator.interpolate(x,f,s.language);i.push(Y)}else if(de(x)||C){var se=w(x,r,a);A(x,se,i,m)}else if(q){var J=T(t,r.children,a);i.push(N.cloneElement(x,O(O({},x.props),{},{key:m}),J))}else if(Number.isNaN(parseFloat(r.name)))if(H){var j=w(x,r,a);A(x,j,i,m,r.voidElement)}else if(l.transSupportBasicHtmlNodes&&p.indexOf(r.name)>-1)if(r.voidElement)i.push(N.createElement(r.name,{key:"".concat(r.name,"-").concat(m)}));else{var U=T(t,r.children,a);i.push(N.createElement(r.name,{key:"".concat(r.name,"-").concat(m)},U))}else if(r.voidElement)i.push("<".concat(r.name," />"));else{var I=T(t,r.children,a);i.push("<".concat(r.name,">").concat(I,"</").concat(r.name,">"))}else if(X(x)==="object"&&!F){var W=r.children[0]?k:null;W&&i.push(W)}else r.children.length===1&&k?i.push(N.cloneElement(x,O(O({},x.props),{},{key:m}),k)):i.push(N.cloneElement(x,O(O({},x.props),{},{key:m})))}else if(r.type==="text"){var B=l.transWrapTextNodes,Q=u?Ge(s.services.interpolator.interpolate(r.content,f,s.language)):s.services.interpolator.interpolate(r.content,f,s.language);B?i.push(N.createElement(B,{key:"".concat(r.name,"-").concat(m)},Q)):i.push(Q)}return i},[])}var P=T([{dummy:!0,children:e||[]}],y,V(e||[]));return ue(P[0])}function Qe(e){var n=e.children,s=e.count,l=e.parent,h=e.i18nKey,u=e.context,p=e.tOptions,o=p===void 0?{}:p,c=e.values,g=e.defaults,y=e.components,f=e.ns,w=e.i18n,A=e.t,T=e.shouldUnescape,P=xe(e,Ke),S=z.exports.useContext(Oe)||{},E=S.i18n,a=S.defaultNS,t=w||E||Pe();if(!t)return Te("You will need to pass in an i18next instance by using i18nextReactModule"),n;var d=A||t.t.bind(t)||function(Y){return Y};u&&(o.context=u);var i=O(O({},Ee()),t.options&&t.options.react),r=f||d.ns||a||t.options&&t.options.defaultNS;r=typeof r=="string"?[r]:r||["translation"];var m=g||ke(n,i)||i.transEmptyNodeValue||h,k=i.hashTransKey,b=h||(k?k(m):m),x=c?o.interpolation:{interpolation:O(O({},o.interpolation),{},{prefix:"#$?",suffix:"?$#"})},F=O(O(O(O({},o),{},{count:s},c),x),{},{defaultValue:m,ns:r}),C=b?d(b,F):m,q=Je(y||n,C,t,i,F,T),H=l!==void 0?l:i.defaultTransParent;return H?N.createElement(H,P,q):q}const en=`<h3 id="type-guards"><a class="heading-anchor" href="#type-guards">#</a>Type guards?</h3>
+import{r as z,j as $,a as v,S as Se,C as _,R as M,I as Oe,w as Te,g as Ee,b as N,_ as je,c as le,d as X,e as Pe,f as fe,u as Z,h as $e,i as ve,T as G,F as Be,k as me,B as L,l as D,m as ae,A as re,n as Ce,o as Ue}from"./index-966e8661.js";const Ne=({children:e,header:n,footer:s,...l})=>{const h=z.exports.useRef(null);return $(_,{...l,children:[!!n&&v(Se.Top,{css:{zIndex:3},children:n}),v(_,{ref:h,flex:1,css:{...!n&&{paddingTop:"env(safe-area-inset-top)"},...!s&&{paddingBottom:"env(safe-area-inset-bottom)"},minBlockSize:0,zIndex:1},children:e}),!!s&&v(M,{css:{paddingBottom:"env(safe-area-inset-bottom)",zIndex:2},children:s})]})};function ze(e,n){if(e==null)return{};var s={},l=Object.keys(e),h,u;for(u=0;u<l.length;u++)h=l[u],!(n.indexOf(h)>=0)&&(s[h]=e[h]);return s}function xe(e,n){if(e==null)return{};var s=ze(e,n),l,h;if(Object.getOwnPropertySymbols){var u=Object.getOwnPropertySymbols(e);for(h=0;h<u.length;h++)l=u[h],!(n.indexOf(l)>=0)&&(!Object.prototype.propertyIsEnumerable.call(e,l)||(s[l]=e[l]))}return s}var _e={area:!0,base:!0,br:!0,col:!0,embed:!0,hr:!0,img:!0,input:!0,link:!0,meta:!0,param:!0,source:!0,track:!0,wbr:!0},Ie=/\s([^'"/\s><]+?)[\s/>]|([^\s=]+)=\s?(".*?"|'.*?')/g;function he(e){var n={type:"tag",name:"",voidElement:!1,attrs:{},children:[]},s=e.match(/<\/?([^\s]+?)[/\s>]/);if(s&&(n.name=s[1],(_e[s[1]]||e.charAt(e.length-2)==="/")&&(n.voidElement=!0),n.name.startsWith("!--"))){var l=e.indexOf("-->");return{type:"comment",comment:l!==-1?e.slice(4,l):""}}for(var h=new RegExp(Ie),u=null;(u=h.exec(e))!==null;)if(u[0].trim())if(u[1]){var p=u[1].trim(),o=[p,""];p.indexOf("=")>-1&&(o=p.split("=")),n.attrs[o[0]]=o[1],h.lastIndex--}else u[2]&&(n.attrs[u[2]]=u[3].trim().substring(1,u[3].length-1));return n}var Re=/<[a-zA-Z0-9\-\!\/](?:"[^"]*"|'[^']*'|[^'">])*>/g,Le=/^\s*$/,De=Object.create(null);function we(e,n){switch(n.type){case"text":return e+n.content;case"tag":return e+="<"+n.name+(n.attrs?function(s){var l=[];for(var h in s)l.push(h+'="'+s[h]+'"');return l.length?" "+l.join(" "):""}(n.attrs):"")+(n.voidElement?"/>":">"),n.voidElement?e:e+n.children.reduce(we,"")+"</"+n.name+">";case"comment":return e+"<!--"+n.comment+"-->"}}var qe={parse:function(e,n){n||(n={}),n.components||(n.components=De);var s,l=[],h=[],u=-1,p=!1;if(e.indexOf("<")!==0){var o=e.indexOf("<");l.push({type:"text",content:o===-1?e:e.substring(0,o)})}return e.replace(Re,function(c,g){if(p){if(c!=="</"+s.name+">")return;p=!1}var y,f=c.charAt(1)!=="/",w=c.startsWith("<!--"),A=g+c.length,T=e.charAt(A);if(w){var P=he(c);return u<0?(l.push(P),l):((y=h[u]).children.push(P),l)}if(f&&(u++,(s=he(c)).type==="tag"&&n.components[s.name]&&(s.type="component",p=!0),s.voidElement||p||!T||T==="<"||s.children.push({type:"text",content:e.slice(A,e.indexOf("<",A))}),u===0&&l.push(s),(y=h[u-1])&&y.children.push(s),h[u]=s),(!f||s.voidElement)&&(u>-1&&(s.voidElement||s.name===c.slice(2,-1))&&(u--,s=u===-1?l:h[u]),!p&&T!=="<"&&T)){y=u===-1?l:h[u].children;var S=e.indexOf("<",A),E=e.slice(A,S===-1?void 0:S);Le.test(E)&&(E=" "),(S>-1&&u+y.length>=0||E!==" ")&&y.push({type:"text",content:E})}}),l},stringify:function(e){return e.reduce(function(n,s){return n+we("",s)},"")}},He="".replace,We=/&(?:amp|#38|lt|#60|gt|#62|apos|#39|quot|#34);/g,Me={"&amp;":"&","&#38;":"&","&lt;":"<","&#60;":"<","&gt;":">","&#62;":">","&apos;":"'","&#39;":"'","&quot;":'"',"&#34;":'"'};function Ge(e){return He.call(e,We,Ze)}function Ze(e){return Me[e]}var Ye=["format"],Ke=["children","count","parent","i18nKey","context","tOptions","values","defaults","components","ns","i18n","t","shouldUnescape"];function ye(e,n){var s=Object.keys(e);if(Object.getOwnPropertySymbols){var l=Object.getOwnPropertySymbols(e);n&&(l=l.filter(function(h){return Object.getOwnPropertyDescriptor(e,h).enumerable})),s.push.apply(s,l)}return s}function O(e){for(var n=1;n<arguments.length;n++){var s=arguments[n]!=null?arguments[n]:{};n%2?ye(Object(s),!0).forEach(function(l){je(e,l,s[l])}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(s)):ye(Object(s)).forEach(function(l){Object.defineProperty(e,l,Object.getOwnPropertyDescriptor(s,l))})}return e}function de(e,n){if(!e)return!1;var s=e.props?e.props.children:e.children;return n?s.length>0:!!s}function ue(e){return e?e&&e.children?e.children:e.props&&e.props.children:[]}function Xe(e){return Object.prototype.toString.call(e)!=="[object Array]"?!1:e.every(function(n){return N.isValidElement(n)})}function V(e){return Array.isArray(e)?e:[e]}function Ve(e,n){var s=O({},n);return s.props=Object.assign(e.props,n.props),s}function ke(e,n){if(!e)return"";var s="",l=V(e),h=n.transSupportBasicHtmlNodes&&n.transKeepBasicHtmlNodesFor?n.transKeepBasicHtmlNodesFor:[];return l.forEach(function(u,p){if(typeof u=="string")s+="".concat(u);else if(N.isValidElement(u)){var o=Object.keys(u.props).length,c=h.indexOf(u.type)>-1,g=u.props.children;if(!g&&c&&o===0)s+="<".concat(u.type,"/>");else if(!g&&(!c||o!==0))s+="<".concat(p,"></").concat(p,">");else if(u.props.i18nIsDynamicList)s+="<".concat(p,"></").concat(p,">");else if(c&&o===1&&typeof g=="string")s+="<".concat(u.type,">").concat(g,"</").concat(u.type,">");else{var y=ke(g,n);s+="<".concat(p,">").concat(y,"</").concat(p,">")}}else if(u===null)le("Trans: the passed in value is invalid - seems you passed in a null child.");else if(X(u)==="object"){var f=u.format,w=xe(u,Ye),A=Object.keys(w);if(A.length===1){var T=f?"".concat(A[0],", ").concat(f):A[0];s+="{{".concat(T,"}}")}else le("react-i18next: the passed in object contained more than one variable - the object should look like {{ value, format }} where format is optional.",u)}else le("Trans: the passed in value is invalid - seems you passed in a variable like {number} - please pass in variables for interpolation as full objects like {{number}}.",u)}),s}function Je(e,n,s,l,h,u){if(n==="")return[];var p=l.transKeepBasicHtmlNodesFor||[],o=n&&new RegExp(p.join("|")).test(n);if(!e&&!o)return[n];var c={};function g(S){var E=V(S);E.forEach(function(a){typeof a!="string"&&(de(a)?g(ue(a)):X(a)==="object"&&!N.isValidElement(a)&&Object.assign(c,a))})}g(e);var y=qe.parse("<0>".concat(n,"</0>")),f=O(O({},c),h);function w(S,E,a){var t=ue(S),d=T(t,E.children,a);return Xe(t)&&d.length===0?t:d}function A(S,E,a,t,d){S.dummy&&(S.children=E),a.push(N.cloneElement(S,O(O({},S.props),{},{key:t}),d?void 0:E))}function T(S,E,a){var t=V(S),d=V(E);return d.reduce(function(i,r,m){var k=r.children&&r.children[0]&&r.children[0].content&&s.services.interpolator.interpolate(r.children[0].content,f,s.language);if(r.type==="tag"){var b=t[parseInt(r.name,10)];!b&&a.length===1&&a[0][r.name]&&(b=a[0][r.name]),b||(b={});var x=Object.keys(r.attrs).length!==0?Ve({props:r.attrs},b):b,F=N.isValidElement(x),C=F&&de(r,!0)&&!r.voidElement,q=o&&X(x)==="object"&&x.dummy&&!F,H=X(e)==="object"&&e!==null&&Object.hasOwnProperty.call(e,r.name);if(typeof x=="string"){var Y=s.services.interpolator.interpolate(x,f,s.language);i.push(Y)}else if(de(x)||C){var se=w(x,r,a);A(x,se,i,m)}else if(q){var J=T(t,r.children,a);i.push(N.cloneElement(x,O(O({},x.props),{},{key:m}),J))}else if(Number.isNaN(parseFloat(r.name)))if(H){var j=w(x,r,a);A(x,j,i,m,r.voidElement)}else if(l.transSupportBasicHtmlNodes&&p.indexOf(r.name)>-1)if(r.voidElement)i.push(N.createElement(r.name,{key:"".concat(r.name,"-").concat(m)}));else{var U=T(t,r.children,a);i.push(N.createElement(r.name,{key:"".concat(r.name,"-").concat(m)},U))}else if(r.voidElement)i.push("<".concat(r.name," />"));else{var I=T(t,r.children,a);i.push("<".concat(r.name,">").concat(I,"</").concat(r.name,">"))}else if(X(x)==="object"&&!F){var W=r.children[0]?k:null;W&&i.push(W)}else r.children.length===1&&k?i.push(N.cloneElement(x,O(O({},x.props),{},{key:m}),k)):i.push(N.cloneElement(x,O(O({},x.props),{},{key:m})))}else if(r.type==="text"){var B=l.transWrapTextNodes,Q=u?Ge(s.services.interpolator.interpolate(r.content,f,s.language)):s.services.interpolator.interpolate(r.content,f,s.language);B?i.push(N.createElement(B,{key:"".concat(r.name,"-").concat(m)},Q)):i.push(Q)}return i},[])}var P=T([{dummy:!0,children:e||[]}],y,V(e||[]));return ue(P[0])}function Qe(e){var n=e.children,s=e.count,l=e.parent,h=e.i18nKey,u=e.context,p=e.tOptions,o=p===void 0?{}:p,c=e.values,g=e.defaults,y=e.components,f=e.ns,w=e.i18n,A=e.t,T=e.shouldUnescape,P=xe(e,Ke),S=z.exports.useContext(Oe)||{},E=S.i18n,a=S.defaultNS,t=w||E||Pe();if(!t)return Te("You will need to pass in an i18next instance by using i18nextReactModule"),n;var d=A||t.t.bind(t)||function(Y){return Y};u&&(o.context=u);var i=O(O({},Ee()),t.options&&t.options.react),r=f||d.ns||a||t.options&&t.options.defaultNS;r=typeof r=="string"?[r]:r||["translation"];var m=g||ke(n,i)||i.transEmptyNodeValue||h,k=i.hashTransKey,b=h||(k?k(m):m),x=c?o.interpolation:{interpolation:O(O({},o.interpolation),{},{prefix:"#$?",suffix:"?$#"})},F=O(O(O(O({},o),{},{count:s},c),x),{},{defaultValue:m,ns:r}),C=b?d(b,F):m,q=Je(y||n,C,t,i,F,T),H=l!==void 0?l:i.defaultTransParent;return H?N.createElement(H,P,q):q}const en=`<h3>Type guards?</h3>
 <p>Type guards validate the structure of data.</p>
 <p>A type guard is a function that takes an unknown value and returns a boolean that indicates if that value is compatible with a specified type.</p>
 <p>If your app deals with external data, API responses, or unknown values, you'll benefit from <code>ts-guardian</code>.</p>
-<h3 id="why"><a class="heading-anchor" href="#why">#</a>Why \`ts-guardian\`?</h3>
+<h3>Why <code>ts-guardian</code>?</h3>
 <ul>
 <li><strong>Concise</strong> - Types can be complex, so syntax is minimal and declarative to preserve legibility.</li>
 <li><strong>Composable</strong> - Types can be composed from other types, so type guards allow similar composition.</li>
 <li><strong>Reliable</strong> - <a href="https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates">Type assertions</a> and <a href="https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates">type predicates</a> make assumptions that cause runtime type errors, so these are avoided.</li>
 </ul>
 <p><code>ts-guardian</code> uses a <em>primitive-based type</em> system to ensure accurate type validation.</p>
-<h2 id="overview"><a class="heading-anchor" href="#overview">#</a>Overview</h2>
+<h2>Overview</h2>
 <p>Here's an example of using <code>ts-guardian</code> to type check an API response:</p>
 <pre><code class="language-ts">import { is } from 'ts-guardian'
 
@@ -67,11 +67,11 @@ if (isBook(response)) {
     u.roles === undefined)
 </code></pre>
 <p><code>ts-guardian</code>'s syntax resembles the TypeScript type, is concise and easy to reason about, and implicitly types the value.</p>
-<h2 id="installation"><a class="heading-anchor" href="#installation">#</a>Installation</h2>
+<h2>Installation</h2>
 <pre><code>npm i ts-guardian
 </code></pre>
-<h2 id="api"><a class="heading-anchor" href="#api">#</a>API</h2>
-<h3 id="api-is"><a class="heading-anchor" href="#api-is">#</a>The \`is\` function</h3>
+<h2>API</h2>
+<h3>The <code>is</code> function</h3>
 <pre><code class="language-ts">import { is } from 'ts-guardian'
 </code></pre>
 <p>Use the <code>is</code> function to create type guards. <code>is</code> takes a <strong>type definition</strong> and returns the type guard:</p>
@@ -86,7 +86,7 @@ const isStrNumTuple = is(['string', 'number']) // guard for '[string, number]'
 const hasName = is({ name: 'string' }) // guard for '{ name: string; }'
 const hasAuthor = is({ author: hasName }) // guard for '{ author: { name: string; }; }'
 </code></pre>
-<h3 id="api-basic-types"><a class="heading-anchor" href="#api-basic-types">#</a>Basic types</h3>
+<h3>Basic types</h3>
 <p>Pass a string to create guards for basic types:</p>
 <pre><code class="language-ts">const isBoolean = is('boolean') // guard for 'boolean'
 const isNull = is('null') // guard for 'null'
@@ -169,7 +169,7 @@ const isAny = is('any') // guard for 'any'
 <blockquote>
 <p>The <code>object</code> type guard matches <code>null</code> values. You probably want to use <code class="language-ts">is({})</code> instead.</p>
 </blockquote>
-<h3 id="api-tuple-types"><a class="heading-anchor" href="#api-tuple-types">#</a>Tuple types</h3>
+<h3>Tuple types</h3>
 <p>Pass an array to create guards for tuples:</p>
 <pre><code class="language-ts">const isStrNumTuple = is(['string', 'number']) // guard for '[string, number]'
 
@@ -179,7 +179,7 @@ isStrNumTuple(['high', 5]) // true
 <p>Pass tuple guards to tuple guards to create guards for nested tuples:</p>
 <pre><code class="language-ts">const isStrAndNumNumTupleTuple = is(['string', is(['number', 'number'])]) // guard for '[string, [number, number]]'
 </code></pre>
-<h3 id="api-object-types"><a class="heading-anchor" href="#api-object-types">#</a>Object types</h3>
+<h3>Object types</h3>
 <p>Pass an object to create guards for objects:</p>
 <pre><code class="language-ts">const isObject = is({}) // guard for '{}'
 
@@ -197,7 +197,7 @@ hasAge({ name: 'Bob', age: 40 }) // true
 
 hasAuthor({ author: { name: 'Bob' } }) // true
 </code></pre>
-<h3 id="api-union-types"><a class="heading-anchor" href="#api-union-types">#</a>Union types</h3>
+<h3>Union types</h3>
 <p>Every type guard has an <code>or</code> method with the same signature as the <code>is</code> function. Use <code>or</code> to create union types:</p>
 <pre><code class="language-ts">const isStringOrNumber = is('string').or('number') // guard for 'string | number'
 
@@ -205,7 +205,7 @@ isStringOrNumber('') // true
 isStringOrNumber(0) // true
 isStringOrNumber(true) // false
 </code></pre>
-<h3 id="api-literal-types"><a class="heading-anchor" href="#api-literal-types">#</a>Literal types</h3>
+<h3>Literal types</h3>
 <p>Pass a <code>number</code>, <code>string</code>, or <code>boolean</code> to <code>isLiterally</code> and <code>orLiterally</code> to create literal type guards. You can also pass multiple arguments to create union literal type guards:</p>
 <pre><code class="language-ts">import { isLiterally } from 'ts-guardian'
 
@@ -215,7 +215,7 @@ const isTrue = isLiterally(true) // guard for 'true'
 const isNumberOrReset = is('number').orLiterally('reset') // guard for 'number | &quot;reset&quot;'
 const isCoolOr5OrTrue = isLiterally('cool', 1, true) // guard for '&quot;cool&quot; | 1 | true'
 </code></pre>
-<h3 id="api-array-types"><a class="heading-anchor" href="#api-array-types">#</a>Array types</h3>
+<h3>Array types</h3>
 <p>Use <code>isArrayOf</code> and <code>orArrayOf</code> to create array type guards:</p>
 <pre><code class="language-ts">import { is, isArrayOf } from 'ts-guardian'
 
@@ -226,7 +226,7 @@ const isStrArrOrNumArr = isArrayOf('string').orArrayOf('number') // guard for 's
 <blockquote>
 <p>Note the difference between <code class="language-ts">isArrayOf(is('string').or('number'))</code> which creates a guard for <code class="language-ts">(string | number)[]</code>, and <code class="language-ts">isArrayOf('string').orArrayOf('number')</code> which creates a guard for <code class="language-ts">string[] | number[]</code>.</p>
 </blockquote>
-<h3 id="api-record-types"><a class="heading-anchor" href="#api-record-types">#</a>Record types</h3>
+<h3>Record types</h3>
 <p>Use <code>isRecordOf</code> and <code>orRecordOf</code> to create record type guards:</p>
 <pre><code class="language-ts">import { is, isRecordOf } from 'ts-guardian'
 
@@ -234,7 +234,7 @@ const isStrRecord = isRecordOf('string') // guard for 'Record&lt;PropertyKey, st
 const isStrOrNumRecord = isRecordOf(is('string').or('number')) // guard for 'Record&lt;PropertyKey, string | number&gt;'
 const isStrRecordOrNumRecord = isRecordOf('string').orRecordOf('number') // guard for 'Record&lt;PropertyKey, string&gt; | Record&lt;PropertyKey, number&gt;'
 </code></pre>
-<h3 id="api-instance-types"><a class="heading-anchor" href="#api-instance-types">#</a>Instance types</h3>
+<h3>Instance types</h3>
 <p>Pass a constructor object to <code>isInstanceOf</code> and <code>orInstanceOf</code> to create guards for object instances:</p>
 <pre><code class="language-ts">const isDate = isInstanceOf(Date) // guard for 'Date'
 
@@ -260,7 +260,7 @@ const isPerson = isInstanceOf(Person) // guard for 'Person'
 
 isPerson(steve) // true
 </code></pre>
-<h3 id="api-intersection-types"><a class="heading-anchor" href="#api-intersection-types">#</a>Intersection types</h3>
+<h3>Intersection types</h3>
 <p>Every type guard has an <code>and</code> method with the same signature as <code>or</code>. Use <code>and</code> to create intersection type guards:</p>
 <pre><code class="language-ts">const hasXOrY = is({ x: 'any' }).or({ y: 'any' }) // guard for '{ x: any; } | { y: any; }'
 const hasXAndY = is({ x: 'any' }).and({ y: 'any' }) // guard for '{ x: any; } &amp; { y: any; }'
@@ -272,7 +272,7 @@ hasXAndY({ x: '' }) // false
 hasXAndY({ y: '' }) // false
 hasXAndY({ x: '', y: '' }) // true
 </code></pre>
-<h3 id="api-user-defined-types"><a class="heading-anchor" href="#api-user-defined-types">#</a>User-defined types</h3>
+<h3>User-defined types</h3>
 <p>Consider the following type and its guard:</p>
 <pre><code class="language-ts">type Book = { title: string; author: string }
 
@@ -301,7 +301,7 @@ const film = { title: 'Psycho', director: 'Alfred Hitchcock' }
 parseBook(book) // returns book as type 'Book'
 parseBook(film) // returns undefined
 </code></pre>
-<h3 id="api-safe-assertion-types"><a class="heading-anchor" href="#api-safe-assertion-types">#</a>Safe assertion</h3>
+<h3>Safe assertion</h3>
 <p>Use the <code>assertThat</code> function to throw an error if a value does not pass a type guard:</p>
 <pre><code class="language-ts">import { is, assertThat } from 'ts-guardian'
 
@@ -317,7 +317,7 @@ value.toUpperCase()
 <p>You can optionally pass an error message to <code>assertThat</code>:</p>
 <pre><code class="language-ts">assertThat(value, isUser, \`\${String(value)} is not a user!\`)
 </code></pre>
-<h3 id="api-convenience-guards-types"><a class="heading-anchor" href="#api-convenience-guards-types">#</a>Convenience guards</h3>
+<h3>Convenience guards</h3>
 <p>There are some guards you'll use frequently, so they're exported for convenience:</p>
 <table>
 <thead>
