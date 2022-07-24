@@ -1,0 +1,25 @@
+{
+  "index.html": {
+    "file": "assets/index-50cdd4e6.js",
+    "src": "index.html",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/ts_guardian_page/Page.tsx"
+    ]
+  },
+  "src/ts_guardian_page/Page.tsx": {
+    "file": "assets/Page.8e918e9d.js",
+    "src": "src/ts_guardian_page/Page.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ],
+    "css": [
+      "assets/Page.6b1fe032.css"
+    ]
+  },
+  "src/ts_guardian_page/Page.css": {
+    "file": "assets/Page.6b1fe032.css",
+    "src": "src/ts_guardian_page/Page.css"
+  }
+}
