@@ -24,8 +24,8 @@ export const SimpleButton = forwardRef<HTMLButtonElement, ButtonProps>(
         css={{
           blockSize: size === 'lg' ? '3.75rem' : '2.5rem',
           borderRadius: { md: theme.radius.sm, lg: theme.radius.sm }[size],
-          fontSize: theme.text.size.md,
-          fontWeight: theme.text.weight.semibold,
+          fontSize: theme.font.size.md,
+          fontWeight: theme.font.weight.semibold,
           padding: size === 'lg' ? theme.space(0, 'xl') : theme.space(0, 'md'),
           ...variantStyle,
         }}

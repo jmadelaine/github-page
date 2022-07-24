@@ -97,7 +97,7 @@ const buildShadow = (shadow: typeof theme.shadow, isDarkMode: boolean) => {
 
 export const buildTheme = (themeBase: typeof theme, isDarkMode: boolean) => ({
   space: buildSpace(themeBase.space),
-  text: themeBase.text,
+  font: themeBase.font,
   colors: buildColors(themeBase.colors, isDarkMode),
   radius: buildRadius(themeBase.radius),
   transitionMillis: themeBase.transitionMillis,

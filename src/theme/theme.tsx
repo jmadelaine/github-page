@@ -11,8 +11,8 @@ const colors = {
   link: { dark: '#0D91FD', light: '#0270CA' },
 }
 
-const text = {
-  size: { xs: '0.75rem', sm: '0.875rem', md: '1rem', lg: '1.25rem', xl: '1.75rem', xxl: '2rem' },
+const font = {
+  size: { xs: '0.75rem', sm: '0.875rem', md: '1rem', lg: '1.375rem', xl: '1.875rem', xxl: '2.5rem' },
   weight: { normal: 400, semibold: 500, bold: 700 },
 }
 
@@ -51,4 +51,4 @@ const transitionMillis = { xs: 50, sh: 200, md: 300, lg: 400 }
 
 const opacity = { disabled: 0.25, placeholder: 0.5 }
 
-export const theme = { colors, text, radius, shadow, space, icon, transitionMillis, opacity }
+export const theme = { colors, font, radius, shadow, space, icon, transitionMillis, opacity }

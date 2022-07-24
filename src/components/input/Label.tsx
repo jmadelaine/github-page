@@ -19,7 +19,7 @@ export const Label: FC<{
       css={{
         ...(isInlineLabel && { flex: 1 }),
         display: 'inline-block',
-        fontWeight: theme.text.weight.semibold,
+        fontWeight: theme.font.weight.semibold,
         ...(required && { '&:after': { content: '"*"' } }),
       }}
     >

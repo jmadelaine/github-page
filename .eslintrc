@@ -1,34 +1,17 @@
 {
-  "env": {
-    "browser": true,
-    "node": true,
-    "es6": true,
-    "jest": true
-  },
-  "extends": ["react-app", "prettier"],
+  "env": { "browser": true, "node": true, "es6": true, "jest": true },
+  "extends": ["prettier"],
   "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "tsconfig.json",
-    "sourceType": "module"
-  },
+  "parserOptions": { "project": "tsconfig.json", "sourceType": "module" },
   "plugins": ["@typescript-eslint", "prefer-arrow", "react", "react-hooks"],
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
+  "settings": { "react": { "version": "detect" } },
   "ignorePatterns": ["scripts/**/*"],
   "rules": {
     "@typescript-eslint/array-type": "error",
     "@typescript-eslint/await-thenable": "error",
     "@typescript-eslint/ban-ts-comment": "error",
     "@typescript-eslint/ban-types": "error",
-    "@typescript-eslint/consistent-type-assertions": [
-      "warn",
-      {
-        "assertionStyle": "never"
-      }
-    ],
+    "@typescript-eslint/consistent-type-assertions": ["warn", { "assertionStyle": "never" }],
     "@typescript-eslint/default-param-last": "error",
     "@typescript-eslint/dot-notation": "warn",
     "@typescript-eslint/method-signature-style": "error",
@@ -66,10 +49,7 @@
     "@typescript-eslint/no-unsafe-member-access": "warn",
     "@typescript-eslint/no-unsafe-return": "error",
     "@typescript-eslint/no-unused-expressions": "error",
-    "@typescript-eslint/no-unused-vars": [
-      "warn",
-      { "varsIgnorePattern": "^jsx$|^_+$", "argsIgnorePattern": "^_+$" }
-    ],
+    "@typescript-eslint/no-unused-vars": ["warn", { "varsIgnorePattern": "^jsx$|^_+$", "argsIgnorePattern": "^_+$" }],
     "@typescript-eslint/no-useless-constructor": "error",
     "@typescript-eslint/no-var-requires": "error",
     "@typescript-eslint/prefer-as-const": "warn",
@@ -135,12 +115,7 @@
     "no-eval": "error",
     "no-extend-native": "error",
     "no-extra-bind": "error",
-    "no-implicit-coercion": [
-      "warn",
-      {
-        "allow": ["!!"]
-      }
-    ],
+    "no-implicit-coercion": ["warn", { "allow": ["!!"] }],
     "no-implied-eval": "error",
     "no-useless-catch": "error",
     "no-useless-escape": "error",
@@ -179,10 +154,7 @@
     "react/forbid-foreign-prop-types": "error",
     "react/function-component-definition": [
       "error",
-      {
-        "namedComponents": "arrow-function",
-        "unnamedComponents": "arrow-function"
-      }
+      { "namedComponents": "arrow-function", "unnamedComponents": "arrow-function" }
     ],
     "react/jsx-boolean-value": ["error", "always"],
     "react/jsx-key": "error",

@@ -17,14 +17,14 @@ import prismPlugin from 'vite-plugin-prismjs'
 type BuildMode = 'development' | 'test' | 'production'
 
 const getDevServerConfig = () => ({
-  port: 44345,
+  port: 3000,
   // Dev server requires a trusted cert is setup in order to load web workers - see README/Develop
   https: {
     cert: fs.readFileSync('../.cert/cert.pem'),
     key: fs.readFileSync('../.cert/key.pem'),
   },
   host: '0.0.0.0',
-  hmr: { clientPort: 44345 },
+  hmr: { clientPort: 3000 },
   open: true,
 })
 
@@ -85,6 +85,10 @@ export default ({ mode }: { mode: BuildMode }) => {
         input: { index: './index.html' },
         output: { entryFileNames: () => 'assets/[name]-[hash].js' },
       },
+    },
+    esbuild: {
+      // Prevents redundant warning, `Top-level "this" will be replaced with undefined since this file is an ECMAScript module`
+      logOverride: { 'this-is-undefined-in-esm': 'silent' },
     },
   })
 }

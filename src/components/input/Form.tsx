@@ -22,7 +22,7 @@ const Group: FC<GroupProps> = ({ legend, children, ...props }) => {
       {!!legend && (
         <legend
           css={{
-            fontWeight: theme.text.weight.semibold,
+            fontWeight: theme.font.weight.semibold,
             padding: 0,
             marginBottom: theme.space.sm,
             color: theme.colors.text(0.5),

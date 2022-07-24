@@ -1,4 +1,4 @@
-import { FC, useState, Dispatch, SetStateAction, useMemo, useLayoutEffect } from 'react'
+import { FC, useState, Dispatch, SetStateAction, useMemo, useLayoutEffect, useEffect } from 'react'
 import facepaint from 'facepaint'
 import { theme as themeBase } from './theme'
 import { buildTheme } from './themeBuilder'
@@ -8,7 +8,6 @@ import { createSafeContext } from 'helpers/createSafeContext'
 import { appBreakpoints } from './BreakpointProvider'
 import { byAscending } from 'helpers/sort'
 import { storage } from 'helpers/storage'
-import { useAnyEffect } from 'hooks/useAnyEffect'
 import { isBoolean } from 'ts-guardian'
 
 interface IThemeContext {
@@ -56,10 +55,9 @@ export const ThemeProvider: FC = ({ children }) => {
     setHasInitialisedDarkMode(true)
   }, [hasInitialisedDarkMode])
 
-  useAnyEffect(
-    () => hasInitialisedDarkMode && storage.set(isDarkModeStorageKey, isDarkMode),
-    [isDarkMode, hasInitialisedDarkMode]
-  )
+  useEffect(() => {
+    if (hasInitialisedDarkMode) storage.set(isDarkModeStorageKey, isDarkMode)
+  }, [isDarkMode, hasInitialisedDarkMode])
 
   // Theme is constructed from base theme and includes helper functions
   const theme = useMemo(() => buildTheme(themeBaseState, isDarkMode), [themeBaseState, isDarkMode])

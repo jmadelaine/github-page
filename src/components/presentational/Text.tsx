@@ -8,8 +8,8 @@ type TextProps = {
   variant?: 'body1' | 'body2' | 'heading' | 'subheading' | 'subtext' | 'button'
   format?: 'truncate' | 'preserve' | 'default'
   align?: 'start' | 'center' | 'end'
-  weight?: keyof BuiltTheme['text']['weight']
-  size?: keyof BuiltTheme['text']['size']
+  weight?: keyof BuiltTheme['font']['weight']
+  size?: keyof BuiltTheme['font']['size']
   className?: string
 }
 
@@ -17,12 +17,12 @@ type ElementRef = HTMLDivElement | HTMLHeadingElement | HTMLParagraphElement
 
 const getVariant = (theme: BuiltTheme, variant: NonNullable<TextProps['variant']>) => {
   return {
-    body1: { fontSize: theme.text.size.md, fontWeight: theme.text.weight.normal },
-    body2: { fontSize: theme.text.size.sm, fontWeight: theme.text.weight.normal },
-    subtext: { fontSize: theme.text.size.xs, fontWeight: theme.text.weight.normal },
-    heading: { fontSize: theme.text.size.lg, fontWeight: theme.text.weight.semibold },
-    subheading: { fontSize: theme.text.size.md, fontWeight: theme.text.weight.semibold },
-    button: { fontSize: theme.text.size.md, fontWeight: theme.text.weight.semibold },
+    body1: { fontSize: theme.font.size.md, fontWeight: theme.font.weight.normal },
+    body2: { fontSize: theme.font.size.sm, fontWeight: theme.font.weight.normal },
+    subtext: { fontSize: theme.font.size.xs, fontWeight: theme.font.weight.normal },
+    heading: { fontSize: theme.font.size.lg, fontWeight: theme.font.weight.semibold },
+    subheading: { fontSize: theme.font.size.md, fontWeight: theme.font.weight.semibold },
+    button: { fontSize: theme.font.size.md, fontWeight: theme.font.weight.semibold },
   }[variant]
 }
 
@@ -41,8 +41,8 @@ export const Text = forwardRef<ElementRef, PropsWithChildren<TextProps>>(
           position: 'relative',
           textAlign: align,
           ...v,
-          ...(!!weight && { fontWeight: theme.text.weight[weight] }),
-          ...(!!size && { fontSize: theme.text.size[size] }),
+          ...(!!weight && { fontWeight: theme.font.weight[weight] }),
+          ...(!!size && { fontSize: theme.font.size[size] }),
           ...(format === 'truncate'
             ? {
                 /* Add aria-label with full text, and wrap truncated text with aria-ignore */

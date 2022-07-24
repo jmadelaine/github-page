@@ -30,7 +30,7 @@ export const Textbox = forwardRef<HTMLInputElement, TextboxProps>(
             color: theme.colors.text(),
             display: 'inline-block',
             fontFamily: 'inherit',
-            fontSize: theme.text.size.md,
+            fontSize: theme.font.size.md,
             lineHeight: 1.25,
             padding: theme.space.md,
             ...(!!endButtonIcon && {

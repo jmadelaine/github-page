@@ -18,6 +18,7 @@ export const globalStyle: ComponentProps<typeof Global>['styles'] = {
     fontSize: '100%',
     lineHeight: 1.25,
     textSizeAdjust: '100%',
+    scrollBehavior: 'smooth',
   },
   body: {
     MsContentZooming: 'none',

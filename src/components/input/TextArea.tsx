@@ -24,7 +24,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(({ initia
         color: theme.colors.text(),
         display: 'inline-block',
         fontFamily: 'inherit',
-        fontSize: theme.text.size.md,
+        fontSize: theme.font.size.md,
         lineHeight: 1.25,
         position: 'relative',
         verticalAlign: 'middle',

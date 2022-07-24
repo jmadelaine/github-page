@@ -55,10 +55,10 @@ export const Docs = () => {
           fontSize: '0.9375rem',
           color: theme.colors.text(isDarkMode ? 0.75 : 0.875),
           '& *': { fontSize: 'inherit', color: 'inherit' },
-          '& h1': { fontSize: '2rem', fontWeight: 700, color: theme.colors.text() },
+          '& h1': { fontSize: '2.5rem', fontWeight: 700, color: theme.colors.text() },
           '& h2': {
             color: theme.colors.text(),
-            fontSize: '1.75rem',
+            fontSize: '1.875rem',
             fontWeight: 700,
             padding: '1rem 2rem',
             borderBottom: `1px solid ${theme.colors.text(0.375)}`,
@@ -69,18 +69,26 @@ export const Docs = () => {
           },
           '& h3': {
             color: theme.colors.text(0.875),
-            fontSize: '1.25rem',
+            fontSize: '1.375rem',
             fontWeight: 500,
             padding: '0.5rem 0',
             paddingTop: '1.5rem',
             '&::first-of-type': { paddingTop: 0 },
           },
           '& h4': { fontSize: '1rem', fontWeight: 500, color: theme.colors.text(0.875) },
+          '& blockquote': {
+            backgroundColor: theme.colors.warning(0.03125),
+            fontSize: '0.875rem',
+            color: theme.colors.text(0.625),
+            padding: '0.5rem 1rem',
+            borderLeft: `1px solid ${theme.colors.warning()}`,
+            borderRadius: '0 0.5rem 0.5rem 0',
+          },
           '& code': {
             color: '#fff',
             fontFamily: '"Share Tech Mono", monospace',
           },
-          '& ul': { marginLeft: '1rem' },
+          '& ul': { marginLeft: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' },
           '& code:not(.language-ts)': { color: theme.colors.primary() },
           '& code .token.keyword': { color: '#c792ea' },
           '& code .token.string': { color: '#c3e88d' },
@@ -95,7 +103,7 @@ export const Docs = () => {
           '& code .token.builtin': { color: '#ffcb6b' },
           '& pre': {
             padding: '1rem 2rem',
-            background: theme.colors.background.dark(1),
+            backgroundColor: theme.colors.background.dark(1),
             border: `1px solid ${theme.colors.background.dark(2)}`,
             borderRadius: '0.5rem',
             overflowX: 'auto',
@@ -115,6 +123,15 @@ export const Docs = () => {
             borderLeft: `1px solid ${theme.colors.text(0.125)}`,
             borderRight: `1px solid ${theme.colors.text(0.125)}`,
           },
+          '& .heading-anchor': {
+            position: 'absolute',
+            left: 0,
+            textDecoration: 'none',
+            transition: 'opacity 160ms',
+            opacity: 0.5,
+            '&:hover': { opacity: 1 },
+          },
+          '& h3 .heading-anchor': { transform: 'translateX(-150%)' },
         }}
       />
     </Col>

@@ -17,7 +17,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const { theme } = useTheme()
 
     return (
-      // eslint-disable-next-line jsx-a11y/no-redundant-roles
       <button
         ref={ref}
         css={{
