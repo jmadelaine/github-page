@@ -4,9 +4,7 @@ const colors = {
   success: { dark: '#0AD651', light: '#0AD651' },
   warning: { dark: '#FFD800', light: '#FFD800' },
   danger: { dark: '#FF2E47', light: '#FF2E47' },
-  background0: { dark: '#1C2024', light: '#EDF0F2' },
-  background1: { dark: '#2A2E33', light: '#F7F9FA' },
-  background2: { dark: '#3D4045', light: '#FFFFFF' },
+  background: { dark: ['#1C2024', '#2A2E33', '#3D4045'], light: ['#EDF0F2', '#F7F9FA', '#FFFFFF'] },
   text: { dark: '#FEFEFF', light: '#1F1F1F' },
   link: { dark: '#0D91FD', light: '#0270CA' },
 }

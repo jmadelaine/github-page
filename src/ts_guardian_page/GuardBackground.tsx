@@ -62,7 +62,7 @@ export const GuardBackgroundText = () => {
   const { theme, isDarkMode } = useTheme()
   const isDesktop = useBreakpoint('lg')
 
-  const backgroundColor = theme.colors.background(isDarkMode ? 0 : 2)
+  const backgroundColor = theme.colors.background(Number(!isDarkMode))
 
   const lines = useMemo(() => createRandomLines(guardText, 8), [])
 

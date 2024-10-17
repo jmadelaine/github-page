@@ -17,8 +17,8 @@ export const useButtonVariantStyle = (variant: Variant = 'neutral') => {
     success: colors.success(),
     warning: colors.warning(),
     danger: colors.danger(),
-    dark: colors.background(1),
-    light: colors.background(1),
+    dark: colors.background(0.5),
+    light: colors.background(0.5),
   }[v]
 
   const hover = {

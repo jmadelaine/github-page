@@ -17,7 +17,7 @@ const buildRadius = (radius: typeof theme.radius) =>
   )
 
 const buildColors = (colors: typeof theme.colors, isDarkMode: boolean) => {
-  const { background0, background1, background2, ...other } = colors
+  const { background: backgroundColor, ...other } = colors
   type OtherColors = typeof other
   type GeneratedOtherColors = Record<
     keyof OtherColors,
@@ -44,22 +44,24 @@ const buildColors = (colors: typeof theme.colors, isDarkMode: boolean) => {
     {} as GeneratedOtherColors
   )
 
-  const backgroundMixFn = (bg0: string, bg1: string, bg2: string, elevation: number) =>
-    elevation <= 0
-      ? bg0
-      : elevation >= 2
-      ? bg2
-      : elevation === 1
-      ? bg1
-      : elevation < 1
-      ? mixColor(bg0, bg1, elevation)
-      : mixColor(bg1, bg2, elevation - 1)
+  const backgroundMixFn = (bgs: string[], elevation = 0) => {
+    elevation = Math.max(0, Math.min(1, elevation))
+
+    if (elevation === 0) return bgs[0]
+    if (elevation === 1) return bgs[bgs.length - 1]
+
+    const bg0Index = Math.floor((bgs.length - 1) * elevation)
+    const bg1Index = Math.min(bg0Index + 1, bgs.length - 1)
+    const bg0 = bgs[bg0Index]
+    const bg1 = bgs[bg1Index]
+    const displacement = (elevation - bg0Index / (bgs.length - 1)) * (bgs.length - 1)
+
+    return mixColor(bg0, bg1, displacement)
+  }
 
   // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-  const backgroundDark = (elevation?: number) =>
-    backgroundMixFn(background0.dark, background1.dark, background2.dark, elevation ?? 0)
-  const backgroundLight = (elevation?: number) =>
-    backgroundMixFn(background0.light, background1.light, background2.light, elevation ?? 0)
+  const backgroundDark = (elevation?: number) => backgroundMixFn(backgroundColor.dark, elevation)
+  const backgroundLight = (elevation?: number) => backgroundMixFn(backgroundColor.light, elevation)
 
   const background = Object.assign(
     (elevation?: number) => (isDarkMode ? backgroundDark(elevation) : backgroundLight(elevation)),

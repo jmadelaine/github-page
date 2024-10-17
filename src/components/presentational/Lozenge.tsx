@@ -15,9 +15,9 @@ const useBackgroundColor = () => {
   } = useTheme()
   return {
     primary: primary(),
-    neutral: background(1),
-    dark: background.dark(1),
-    light: background.light(1),
+    neutral: background(0.5),
+    dark: background.dark(0.5),
+    light: background.light(0.5),
   }
 }
 

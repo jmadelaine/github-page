@@ -18,7 +18,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(({ initia
       cols={1}
       css={{
         appearance: 'none',
-        background: theme.colors.background(1),
+        background: theme.colors.background(0.5),
         border: `1px solid ${isError ? theme.colors.danger() : 'transparent'}`,
         boxSizing: 'border-box',
         color: theme.colors.text(),

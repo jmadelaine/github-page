@@ -68,7 +68,7 @@ export const ThemeProvider: FC = ({ children }) => {
       <Global
         styles={{
           body: {
-            backgroundColor: theme.colors.background(isDarkMode ? 0 : 2),
+            backgroundColor: theme.colors.background(Number(!isDarkMode)),
             color: theme.colors.text(),
           },
         }}

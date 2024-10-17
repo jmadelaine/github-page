@@ -34,7 +34,7 @@ export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(({ onC
       <span css={{ position: 'relative', width: '1.5rem', height: '1.5rem' }}>
         <span
           css={{
-            backgroundColor: theme.colors.background(1),
+            backgroundColor: theme.colors.background(0.5),
             transition: `border-color ${transitionMs}ms`,
             position: 'relative',
             cursor: 'pointer',

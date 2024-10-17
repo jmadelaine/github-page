@@ -23,7 +23,7 @@ export const Textbox = forwardRef<HTMLInputElement, TextboxProps>(
           css={{
             pointerEvents: 'auto',
             appearance: 'none',
-            background: theme.colors.background(1),
+            background: theme.colors.background(0.5),
             border: `1px solid ${isError ? theme.colors.danger() : 'transparent'}`,
             borderRadius: theme.radius.sm,
             boxSizing: 'border-box',

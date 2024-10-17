@@ -39,7 +39,7 @@ export const LiveExample = () => {
     <Row
       distribute="center"
       css={{
-        background: theme.colors.background(1),
+        background: theme.colors.background(0.5),
         borderTop: `1px solid ${theme.colors.text(0.125)}`,
         borderBottom: `1px solid ${theme.colors.text(0.125)}`,
       }}
@@ -66,7 +66,7 @@ export const LiveExample = () => {
               css={{
                 flex: 1,
                 resize: 'none',
-                background: theme.colors.background(isDarkMode ? 0.33 : 2),
+                background: theme.colors.background(isDarkMode ? 1 / 6 : 1),
                 borderRadius: theme.radius.md,
                 padding: theme.space.md,
                 fontFamily: '"Share Tech Mono", monospace',
@@ -145,7 +145,7 @@ export const LiveExample = () => {
               css={{
                 flex: 1,
                 resize: 'none',
-                background: theme.colors.background(isDarkMode ? 0.33 : 2),
+                background: theme.colors.background(isDarkMode ? 1 / 6 : 1),
                 borderRadius: theme.radius.md,
                 padding: theme.space.md,
                 fontFamily: '"Share Tech Mono", monospace',

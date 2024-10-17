@@ -29,7 +29,7 @@ export const Checkbox = forwardRef<
           '&:checked + span': {
             backgroundColor: theme.colors.primary(),
             borderColor: theme.colors.primary(),
-            color: theme.colors.background(1),
+            color: theme.colors.background(0.5),
           },
           '&:disabled + span': { opacity: theme.opacity.disabled, cursor: 'not-allowed' },
         }}
